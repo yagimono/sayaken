@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sayaken</title>
-    <%= csrf_meta_tags %>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109513062-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+      function gtag() {
+          dataLayer.push(arguments);
+      }
 
-  <body>
-    <%= yield %>
-  </body>
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109513062-1');
+  </script>
+  <title>さやけんサイト</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+</head>
+
+<body>
+<%= yield %>
+</body>
 </html>
