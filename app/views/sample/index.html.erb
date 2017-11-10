@@ -2,10 +2,18 @@
 <html>
 <head>
   <title>HTMLの練習</title>
-  <script src="ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script type="text/javascript">
-      $(function(){ // if document is ready
-          $.get("https://staging-mmc.akb48shop.jp/api/v1/NGT48-products/1974");
+      $(function () { // if document is ready
+          'use strict';
+
+          var target = 'https://shopping.akb48-group.com/api/v1/NGT48-products/1960';
+          $.ajax({
+              url: target,
+              data: 'json'
+          }).done(function (res) {
+              console.log(res);
+          });
       });
   </script>
 </head>
