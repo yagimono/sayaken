@@ -1,9 +1,7 @@
-<h3 class="show_title"><%= @blogpost.title %></h3>
-<p class="show_read"><%= @blogpost.read + '［' + @blogpost.bloggenre.name + '］' %></p>
+<h1 class="show_title"><%= @blogpost.title %></h1>
+<!--<h2 class="show_read"><%= @blogpost.read + '［' + @blogpost.bloggenre.name + '］' %></h2>-->
 <% contents = @blogpost.content.split("\n") %>
-<div class="show_content">
-  <% contents.each do |paragraph| %>
-      <p><%= paragraph %></p>
-  <% end %>
-</div>
+<% contents.each do |paragraph| %>
+    <p class="show_content"><%= paragraph %></p>
+<% end %>
 <p class="show_created">（<%= @blogpost.created_at %>）</p>

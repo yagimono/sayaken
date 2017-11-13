@@ -1,61 +1,137 @@
-body {
-  color: darkgray;
-  font-size: 14pt;
-  margin: 10px 20px;
-}
-
-#header {
-}
-
-#main {
-  width: 75%;
-  float: left;
-}
-
-#side {
-  width: 20%;
-  float: right;
-}
-
-h1 {
-  color: darkgray;
-  font-size: 28pt;
-  margin: 30px 0 70px 0;
-}
-
-h2 {
-  color: darkgray;
-  font-size: 14pt;
-  margin: 50px 0;
-}
-
-hr {
-  display: block;
-  height: 2px;
-  background-color: #eee;
-  border: 0;
-  margin: 50px 0 0 0;
-}
-
 a {
-  color: darkgray;
+  color: black;
   text-decoration: none;
 }
 
 a:hover {
-  color: darkgray;
+  color: black;
   text-decoration: underline;
 }
 
+/* ボディ */
+body {
+  margin: 0; /* スペース */
+  padding: 0; /* 余白 */
+  font-size: 15px; /* 文字サイズ */
+  line-height: 1.618; /* 行の高さ */
+}
+
+/* スマホだけに適用するCSS */
+@media screen and (max-width: 479px) {
+  /* ボディ */
+  body {
+    font-size: 13px; /* 文字サイズ */
+  }
+}
+
+/* ヘッダー */
+.header {
+  border-bottom: 3px solid #888; /* 枠線 */
+  text-align: center; /* テキスト、画像の真ん中寄せ */
+  padding: 1em 0; /* 上下の余白 */
+  margin-bottom: 2em; /* 他のブロックとのスペース */
+  background: #e8e8e8; /* 背景色(確認用) */
+}
+
+/* ロゴ画像を囲む[h1] */
+.logo-wrapper {
+  margin: 0; /* スペース */
+  padding: 0; /* 余白 */
+  line-height: 1; /* 行の高さ */
+}
+
+/* ロゴ画像 */
+.logo {
+  width: 400px; /* 横幅 */
+  height: auto; /* 高さ */
+}
+
+/* スマホだけに適用するCSS */
+@media screen and (max-width: 479px) {
+  /* ロゴ画像 */
+  .logo {
+    width: 150px; /* 横幅 */
+  }
+}
+
+/* フッター */
+.footer {
+  border-top: 3px solid #888; /* 枠線 */
+  text-align: center; /* テキスト、画像の真ん中寄せ */
+  margin-top: 2em; /* 他のブロックとのスペース */
+  padding: 1em 0; /* 上下の余白 */
+  background: #e8e8e8;
+}
+
+/* 全体(デスクトップPCとスマホ)に適用するCSS */
+.wrapper {
+  width: 1000px;
+  margin: 0 auto; /* 左右に[auto]を指定することで、真ん中に寄る */
+  padding: 0; /* 上下左右の余白を0にしておく */
+}
+
+/* スマホだけに適用するCSS */
+@media screen and (max-width: 479px) {
+  .wrapper {
+    width: auto;
+    padding: 0 10px; /* 左右の余白 */
+  }
+}
+
+/* 全体(デスクトップPCとスマホ)に適用するCSS */
+.main {
+  width: 618px;
+  padding: 20px; /* 上下左右に20pxの余白 */
+  border: 1px solid rgba(0, 0, 0, .1); /* 枠線 */
+}
+
+.side {
+  width: 320px;
+}
+
+/* スマホだけに適用するCSS */
+@media screen and (max-width: 479px) {
+  .main {
+    width: auto;
+    padding: 0; /* 余白 */
+    border: none; /* 枠線 */
+  }
+
+  .side {
+    width: auto;
+  }
+}
+
+/* 全体(デスクトップPCとスマホ)に適用するCSS */
+.main {
+  float: left; /* 左に寄せる */
+}
+
+.side {
+  float: right; /* 右に寄せる */
+}
+
+/* スマホだけに適用するCSS */
+@media screen and (max-width: 479px) {
+  .main {
+    float: none; /* floatを無効する */
+  }
+
+  .side {
+    float: none; /* floatを無効する */
+  }
+}
+
+/* 全体(デスクトップPCとスマホ)に適用するCSS */
+.wrapper {
+  overflow: hidden; /* floatを解除する */
+}
+
 .top_title {
-  color: darkgray;
-  font-size: 18pt;
   margin: 25px 0;
 }
 
 .top_read {
-  color: darkgray;
-  font-size: 12pt;
   margin: 0 0 25px 50px;
 }
 
@@ -64,20 +140,14 @@ a:hover {
 }
 
 .show_title {
-  color: darkgray;
-  font-size: 18pt;
   margin: 25px 0;
 }
 
 .show_read {
-  color: darkgray;
-  font-size: 12pt;
   margin: 50px 20px;
 }
 
 .show_content {
-  color: darkgray;
-  font-size: 12pt;
   margin: 20px;
 }
 
@@ -88,7 +158,6 @@ a:hover {
 
 .navigate {
   text-align: center;
-  font-size: 10pt;
   margin: 50px;
 }
 

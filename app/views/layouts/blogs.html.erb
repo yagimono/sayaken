@@ -14,6 +14,8 @@
 
       gtag('config', 'UA-109513062-1');
   </script>
+  <!-- ビューポートの設定 -->
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>さやけんサイト</title>
   <%= csrf_meta_tags %>
 
@@ -23,22 +25,58 @@
 </head>
 
 <body>
-<header id="header">
-  <h1><a href="/blogs"><%= @blogconfig.title %></a></h1>
-  <h2><%= @blogconfig.subtitle %></h2>
-</header>
-<hr>
-<div id="side">
-  <% Bloggenre.all.each do |genre| %>
-      <p>
-        <a href="/blogs/genre/<%= genre.id %>">
-          <%= genre.name %>
-        </a>
-      </p>
-  <% end %>
+<!-- ヘッダー開始 -->
+<div class="header">
+  <h1 class="logo-wrapper">
+    <img src="/logo.png" alt="ロゴ画像" class="logo">
+  </h1>
 </div>
-<main id="main">
-  <%= yield %>
-</main>
+<!-- ヘッダー終了 -->
+
+<!-- メインとサイドバーを囲むラッパー開始 -->
+<div class="wrapper">
+
+  <!-- メイン開始 -->
+  <div class="main">
+    <%= yield %>
+  </div>
+  <!-- メイン終了 -->
+
+  <!-- サイドバー開始 -->
+  <div class="side">
+
+    <!-- 新着記事 -->
+    <div class="newlist">
+      <h2>ジャンル</h2>
+      <ul>
+        <% Bloggenre.all.each do |genre| %>
+            <li><a href="/blogs/genre/<%= genre.id %>"><%= genre.name %></a></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <!-- 著者紹介 -->
+    <div class="author">
+      <h2>著者紹介</h2>
+      <p><img src="/author.png"></p>
+      <p>こんにちは。さやけんです。</p>
+      <p>エンジニアとパパを両立する</p>
+      <p>スーパーイクメンです。</p>
+    </div>
+
+  </div>
+  <!-- サイドバー終了 -->
+
+</div>
+<!-- メインとサイドバーを囲むラッパー終了 -->
+
+<!-- フッター開始 -->
+<div class="footer">
+  <p>Copyright © 2017</p>
+  <p>Sayaken All Rights Reserved.</p>
+  <p>http://www.sayaken.click</p>
+</div>
+<!-- フッター終了 -->
+
 </body>
 </html>
